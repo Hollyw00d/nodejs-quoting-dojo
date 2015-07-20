@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quoting Dojo</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</head>
+<body>
+
+<div id="wrapper">
+    <h1>Here are the awesome quotes!</h1>
+
+    <%
+    // Month names in an array
+    var monthName = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    // In the for loop below I used the code below
+    // to get the month name using the array above
+    // as date.getMonth() spits out a number
+    // for the month starting with
+    // "0" for January and "11" for December:
+    // monthName[quotes[i].updated_at.getMonth()]
+
+    // Also in the For Loop I looked ensured
+    // there were two digits for each minute record
+    // by using:
+    // ("0" + quotes[i].updated_at.getMinutes()).slice(-2)
+    %>
+
+    <% for(var i = quotes.length - 1; i > -1; i--) { %>
+
+       <div class="quote">
+           <p>&ldquo;<%= quotes[i].quote %>&rdquo;</p>
+
+           <p>&mdash; <%= quotes[i].name %> at <%= quotes[i].updated_at.getHours() %>:<%= ("0" + quotes[i].updated_at.getMinutes()).slice(-2) %>, <%= monthName[quotes[i].updated_at.getMonth()] %> <%= quotes[i].updated_at.getDate() %>, <%= quotes[i].updated_at.getFullYear() %></p>
+           <% if(i != 0){ %>
+                <hr />
+           <% } %>
+       </div>
+    <% } %>
+
+    <p><a class="right" href="/">Go Home!</a></p>
+
+</div>
+
+</body>
