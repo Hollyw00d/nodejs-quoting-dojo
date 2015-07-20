@@ -1,0 +1,48 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 920px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+label {
+    width: 200px;
+    display: inline-block;
+}
+
+input[type=text] {
+    vertical-align: top;
+    display: inline-block;
+    width: 650px;
+    padding: 10px;
+}
+
+input[type=submit] {
+    vertical-align: top;
+    display: inline-block;
+}
+
+textarea {
+    vertical-align: top;
+    display: inline-block;
+    width: 652px;
+    padding: 10px;
+    height: 150px;
+    overflow: auto;
+}
+
+.left {
+    display: inline-block;
+    float: left;
+}
+
+.right {
+    display: inline-block;
+    float: right;
+}
+
